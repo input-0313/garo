@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GARO | ICRA 2026</title>
+  <meta name="description" content="GARO: Geometry-Aware Redundancy Optimization for Real-Time and High-Fidelity Dynamic Gaussian Splatting. Accepted to ICRA 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="mark" href="#">GARO</a>
+    <nav>
+      <a href="#video">Video</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#bibtex">Cite</a>
+      <a class="btn" href="assets/GARO_ICRA2026.pdf" download>Paper PDF</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="venue">ICRA 2026 · Accepted</p>
+      <h1>GARO</h1>
+      <p class="subtitle">Geometry-Aware Redundancy Optimization for Real-Time and High-Fidelity Dynamic Gaussian Splatting</p>
+      <p class="authors">
+        <a href="https://arxiv.org/abs/2609.23509">Huiwen Xue</a><sup>1</sup>,
+        Kaixing Zhao<sup>1*</sup>,
+        Zuheng Ming<sup>2,3*</sup>,
+        Tingcheng Li<sup>4</sup>
+      </p>
+      <p class="affil">
+        <sup>1</sup>Northwestern Polytechnical University &nbsp;·&nbsp;
+        <sup>2</sup>Université Sorbonne Paris Nord &nbsp;·&nbsp;
+        <sup>3</sup>EmboMind Research &nbsp;·&nbsp;
+        <sup>4</sup>Suzhou University of Science and Technology
+        <br /><span class="note">* Corresponding authors</span>
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#video">Watch demo</a>
+        <a class="btn" href="https://arxiv.org/abs/2609.23509" target="_blank" rel="noopener">arXiv</a>
+        <a class="btn" href="assets/GARO_ICRA2026.pdf" download>PDF</a>
+      </div>
+    </section>
+
+    <section id="video" class="video-panel">
+      <div class="video-shell">
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster=""
+          src="assets/garo-demo.mp4"
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <p class="caption">Project demo · qualitative results and comparisons</p>
+    </section>
+
+    <section id="abstract" class="block">
+      <h2>Abstract</h2>
+      <p>
+        Novel view synthesis is a key task for dynamic scene reconstruction, where high rendering speed is essential for applications such as virtual reality.
+        Existing deformable Gaussian Splatting methods achieve high-fidelity dynamic scene modeling, but still face limitations in memory usage and rendering efficiency due to the large number of redundant Gaussians.
+        To address these challenges, we propose <strong>Geometry-Aware Redundancy Optimization (GARO)</strong>, a unified redundancy measurement framework in the adaptive density control stage of the traditional dynamic scene reconstruction pipeline.
+        This framework first selects low-gradient candidates using an optimization activity assessment strategy, and then evaluates geometric complexity through low curvature analysis to further filter and prune redundant points, resulting in a compact and expressive Gaussian representation.
+        Extensive experiments on synthetic and real-world datasets demonstrate that GARO achieves robust trade-offs between quality and speed, with PSNR remaining stable and rendering speed improved by <strong>2×</strong>.
+      </p>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="num">2×</span>
+        <span class="lab">Rendering speedup</span>
+      </div>
+      <div class="stat">
+        <span class="num">−65%</span>
+        <span class="lab">Gaussians (D-NeRF)</span>
+      </div>
+      <div class="stat">
+        <span class="num">ICRA</span>
+        <span class="lab">2026 acceptance</span>
+      </div>
+    </section>
+
+    <section id="bibtex" class="block">
+      <div class="bib-head">
+        <h2>BibTeX</h2>
+        <button type="button" id="copy-bib" class="btn small">Copy</button>
+      </div>
+      <pre id="bibtex-text"><code>@inproceedings{xue2026garo,
+  title     = {{GARO}: Geometry-Aware Redundancy Optimization for Real-Time and High-Fidelity Dynamic Gaussian Splatting},
+  author    = {Xue, Huiwen and Zhao, Kaixing and Ming, Zuheng and Li, Tingcheng},
+  booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  year      = {2026}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 GARO authors. Personal use of IEEE material is permitted; see the paper for rights.</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('copy-bib');
+    const text = document.getElementById('bibtex-text').innerText;
+    btn?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = 'Copied';
+        setTimeout(() => (btn.textContent = 'Copy'), 1600);
+      } catch {
+        btn.textContent = 'Select & copy';
+      }
+    });
+  </script>
+</body>
+</html>
