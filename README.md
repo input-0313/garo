@@ -1,9 +1,8 @@
-# GARO (ICRA 2026) — Project Page
+# GARO (ICRA 2026)
 
 **GARO: Geometry-Aware Redundancy Optimization for Real-Time and High-Fidelity Dynamic Gaussian Splatting**
 
-This repository hosts the **project page**, paper PDF, and demo video only.  
-Source code is not included in this repository.
+Project page is available below. Source code will be released in this repository.
 
 - Paper (arXiv): https://arxiv.org/abs/2609.23509
 - Project page (GitHub Pages): https://input-0313.github.io/garo/
